@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<style>
+   p {margin:4px;font-size:16px; 
+        font-weight:bolder;cursor:pointer    /*마우스 모양*/}
+   .blue {color:blue}
+</style>
+<title>jQuery 실습</title>
+<script>
+ $(function(){ 
+	 //$('p').bind('click',function(){
+     //jQuery에서의 이벤트 연결방법2 ->$(선택자).이벤트종류명(function(){})
+     $('p').click(function(){
+		 //형식 $(선택자).toggleClass(클래스 선택자(설정된))  addClass()<->removeClass()
+		 $(this).toggleClass('blue') //같은 태그 구분(이벤트를 발생시킨 태그)->$(this)
+	 })
+ })
+ 
+</script>
+</head>
+<body>
+  <p class="blue">엘리먼트에 적용된 클래스를 </p>
+  <p>추가하고 제거하기를 반복연습합니다.</p>
+</body>
+</html>
+
+

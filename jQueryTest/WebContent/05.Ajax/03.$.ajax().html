@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<title>jQuery 실습(03.$.ajax())</title>
+<script>
+ $(function(){ 
+	 //$.ajax(1.url(요청문서),2.매개변수(생략가능),3.콜백함수)
+	 //~aa2.jsp?name='test'&age=23&addr='서울시 강남구 대현빌딩3'
+	 $.ajax({
+		 url:'aa2.jsp',  //1.url(속성명):value값만 변경가능
+		 data:{name:'test',age:23,addr:'서울시 강남구 대현빌딩3'}, //2.data:{변수:값,변수2:값2}
+		 success:function(args){ //3.success:성공적으로 보내준경우 익명함수(매개변수명)
+			 $('body').append(args)
+		 }//success
+	 })//$.ajax
+ })
+</script>
+</head>
+<body>
+  
+</body>
+</html>
+
+

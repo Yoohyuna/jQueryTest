@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<title>jQuery 실습(함수를 연결)</title>
+<script>
+ $(function(){ 
+	  //var test=document.getElementsByTagName('h2') //태그의 정보=>태그객체를 의미
+	  var test=$('h2')
+	  alert(test) //[Object object] ->자바스크립트 객체표시 ->$('h2').css(~)
+	  /*
+	  test.css('font-family','궁서체')
+	  test.css('font-size','30pt')
+	  test.css('color','red')
+	  
+	  특정태그에 대해서 함수를 호출할때 여러개를 마치 체인처럼 함수를 나열해서 호출하는 방식
+	  ->chaining method
+	  */
+	  test.css('font-family','궁서체').css('font-size','30pt').css('color','red')
+ })
+ 
+</script>
+</head>
+<body>
+  <h2>jQuery CSS 연습</h2>
+</body>
+</html>
+
+

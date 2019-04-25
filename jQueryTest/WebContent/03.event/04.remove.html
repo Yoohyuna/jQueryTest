@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<title>jQuery 실습(특정태그의 내용을 삭제(remove,empty구분))</title>
+<script>
+ $(function(){ 
+	 //$('#button1').bind('click',function(){})
+	 $('#button1').click(function(){
+		 $('#div1').remove() //전체 삭제->drop table 테이블명(구조까지 삭제)
+	 })
+	 //
+	 $('#button2').click(function(){
+		 $('#div1').empty()//=>특정태그의 자식태그를 포함한다면 자식태그들도 삭제
+	 })
+	 //
+	 $('#button3').click(function(){
+		 //1.empty->태그의 내용을 삭제시킬때 사용-><p>div second</p>-><p> </p>
+		 $('.test').empty() //delete from 테이블명->내용만 삭제
+	 })
+ })
+ 
+</script>
+</head>
+<body>
+   <div id="div1" style="height:100px;width:300px;
+                                    border:1px solid black;background-color:yellow">
+   
+      <p class="test"  style="height:50px;width:50px;
+                                    border:1px solid red;background-color:yellow">div first</p>
+      <p>div second</p>
+   </div><br>
+  <button id="button1">Remote div</button>
+  <button id="button2">Empty div</button>
+  <button id="button3">Empty p</button>
+</body>
+</html>
+
+
+
+
+
+

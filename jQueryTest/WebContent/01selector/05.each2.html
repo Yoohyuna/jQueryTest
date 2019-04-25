@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<title>jQuery 실습(each함수 2)</title>
+<script>
+ $(function(){ 
+	 //중첩된 태그의 정보를 어떻게 얻어오고 내용을 검색->스타일 적용
+	 //jquery var $변수명=값(객체)
+	 var $nodes=$('#root').children().css('color','red') //<c:set  item=${test} ~>
+	 alert('자식들의 수=>'+$nodes.length)
+	 var txt=" "//자식들의 이름들을 저장할 변수
+	 //형식)$(반복적으로 실행시킬 태그명).each(함수명 | function() {})
+	 /*
+	  1.text()->오직 태그의 텍스트만 가져오는 함수<->text(매개변수(변경할 값))
+	  2.html()->태그와 텍스트들까지 같이 가져오는 함수 <->html(매개변수명)->Setter함수
+	  3.val()->입력폼 안에 입력양식에 해당되는 값을 가져올때 사용(input,check~)
+	               <->val(매개변수값)->Setter함수
+	 */
+	 $('#root').children().each(function(){
+		 txt+=$(this).val()+" " //html(),val() =>같은 태그를 구분하는 예약어 ->$(this)
+	 })
+	 alert(txt)
+ })
+ 
+  
+ 
+</script>
+</head>
+<body><!--부모 자식관계  -->
+    <div id="root">
+        <div><b>홍길동</b></div>
+        <div>테스트김</div>
+        <div><i>임시</i></div>
+        <div>임시테스트</div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

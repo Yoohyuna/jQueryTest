@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<title>jQuery 실습</title>
+<script>
+ $(function(){ 
+	 $('#sel').change(function(event){
+		 var imgSrc=$(event.target).val()
+		 //var imgSrc=$(this).val()
+		 $('#img').attr('src',imgSrc)
+	 })
+ })
+</script>
+</head>
+<body>
+  <form name="frm">
+     <table>
+        <tr>
+          <td>
+              <select id="sel">
+                 <option value="../picCats/Persian.jpg">Persian
+                 <option value="../picCats/RussianBlue.jpg">RussianBlue
+                 <option value="../picCats/BritishShorthairs.jpg">BritishShorthairs
+              </select>
+          </td>
+          <td><img id="img" ></td>
+        </tr>
+     </table>
+  </form>
+</body>
+</html>
+
+

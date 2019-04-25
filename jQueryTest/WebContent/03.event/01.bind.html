@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<title>jQuery 실습</title>
+<script>
+ $(function(){ 
+	 $('img').css('width',250)
+	 
+	 //형식) window.on이벤트종류명=호출할 함수명 or 익명함수
+	 //형식2)window.addEventListener(이벤트종류명,실행할 함수명)
+	 //형식3) $(이벤트발생 대상자 선택자).bind(등록할 이벤트종류명,함수명)
+	 //태그의 기본적인 기능(원래기능(링크(a)->이동,전송버튼(submit (X))))
+	 //event =>마우스의 클릭상태,좌표값(x,y)->매개변수로 전달 받으면 된다.
+	// $('a').bind('click',function(){ //(1)
+     $('a').bind('click',function(event){	 //(2)
+		 //alert('이벤트 연습중')
+		 //$(this) ->같은 태그를 구분하는 키워드 사용(이벤트 처리할때)
+		 var href=$(this).attr('href') //$('a').attr('href',값) 속성추가
+		 //alert(href)
+		 //$('img').attr('src',href)
+		 $('img').attr('src',$(this).attr('href'))
+		 //return false //(1)
+		 event.preventDefault()//(2)
+	 })
+ })
+ 
+</script>
+</head>
+<body>
+<ul><!--링크걸기(기본기능(페이지 이동기능))  -->
+  <li><a href="../picCats/Persian.jpg">Persian</a></li>
+  <li><a href="../picCats/RussianBlue.jpg">RussianBlue</a></li>
+  <li><a href="../picCats/BritishShorthairs.jpg">BritishShorthairs</a></li>
+</ul>
+
+<!-- <img src="../picCats/Persian.jpg"> -->
+<img>
+</body>
+</html>
+
+
+
+
+
+

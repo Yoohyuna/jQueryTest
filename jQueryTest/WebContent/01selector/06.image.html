@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<title>jQuery 실습</title>
+<script>
+ $(function(){ 
+	 $('img').css('width',250)
+	 
+	 setInterval(function(){
+		 //clone()->복사하라
+		 // $('img').first() =>$('img:eq(0)') or $('img').eq(0) or $('img:first')
+		 $('img').first().clone().appendTo('body')
+	 },2000) //1.실행 반복할 함수,2.초단위(1000->1초)
+ })
+ 
+</script>
+</head>
+<body>
+  <img src="../picCats/Persian.jpg">
+  <img src="../picCats/RussianBlue.jpg">
+  <img src="../picCats/BritishShorthairs.jpg">
+</body>
+</html>
+
+
+
+
+
+

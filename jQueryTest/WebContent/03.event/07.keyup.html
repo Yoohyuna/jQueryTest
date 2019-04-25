@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript"  src="http://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<title>jQuery 실습(키를 입력->실시간 검색)</title>
+<script>
+//var value; //전역
+ $(function(){ 
+	 //사용자가 글자를 입력했을때 발생하는 이벤트->keyUp
+	 //$('input').bind('keyup',function(){})
+	 $('input').keyup(function(){
+		 var value=$(this).val()
+		 //출력구문
+		 report(value)
+	 })
+	 //버튼을 눌렀을때 input의 내용지우고 커서 입력
+	 $('button').click(function(){
+		 //$('input').val('val 함수 연습중')
+		 $('input').val('')
+		 $('input').focus()
+	 })
+	 //div태그에 입력받은 값을 추가시켜주는 함수 작성
+	 function report(msg){
+		 $('#console').text(msg) //<->$('#console').text()(Getter 함수)
+	 }
+ })
+ 
+</script>
+</head>
+<body>
+  <button>reset</button><p>
+  <input type="text" value="val 함수 연습중" size="80">
+  <div id="console"></div>
+</body>
+</html>
+
+
